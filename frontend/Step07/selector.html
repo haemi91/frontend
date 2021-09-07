@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 전체 선택자 */
+        *{
+            padding:0;
+            margin:0;
+        }
+        /* 태그 선택자 */
+        /* 
+            색상 선택 방법
+                1. HTML 색상표
+                2. RGB 함수
+                3. 색상 이름 
+         */
+        li{
+            color: blueviolet;
+            font-weight: bold; /* lighter,bold */
+        }
+        /* 아이디 선택자 */
+        #name{
+            font-size: 20px;
+        }
+        /* 클래스 선택자 */
+        .underline{
+            text-decoration: underline;
+        }
+        .strong{
+            font-weight: bold;
+        }
+        /* 그룹 선택자 */
+        h1,p,#id{
+            /* 기울임 글꼴 */
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>제목 태그</h1>
+    <!-- 클래스는 띄워쓰기로 여러개의 클래스를 적용이 가능 -->
+    <p class="underline strong">제 2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다</p>
+    <ul>
+        <li class="underline">항목-1</li>
+        <li>항목-2</li>
+        <li>항목-3</li>
+        <li>항목-4</li>
+    </ul>
+    <input type="text" id="id" placeholder="아이디값">
+    <br/>
+    <input type="text" id="name" placeholder="이름내용">
+</body>
+</html>

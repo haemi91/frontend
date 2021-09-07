@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>문자열 함수</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        
+        let str = "국채를 모집하거나 예산외에 국가의 부담이 될 계약을 체결하려 할 때에는 정부는 미리 국회의 의결을 얻어야 한다."
+                    + "국민경제의 발전을 위한 중요정책의 수립에 관하여 대통령의 자문에 응하기 위하여 국민경제자문회의를 둘 수 있다."
+        //문자 추출
+        document.write(str.charAt(5) ,"<br>");
+        //문자열 추출 - 시작번호, 마지막번호+1 --> 원하는거까지 추출 가능
+        document.write(str.substring(5,10),"<br>");
+        //검색
+        document.write(str.indexOf("모집"),"<br>");
+        document.write(str.indexOf("모집",6),"<br>"); //찾는 단어가 없을 경우 -1이 생김
+        //개수
+        let str2 = "국가의"
+        document.write(str2," 글자 개수 : ",str2.length, "<hr>")
+        //문자열 변경
+        document.write(str.replace("국가", "XX"),"<hr>");
+        document.write(str.replaceAll("국가", "XX"),"<hr>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

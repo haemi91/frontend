@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>클릭 이벤트</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <input type="text" id="txt"><button id="btn">확인</button>
+    <script>
+        //아이디가 btn 태그 선택
+        let btn = document.getElementById("btn"); 
+        //클릭 이벤트
+        btn.onclick = function(){
+            // 아이디 txt인 태그 선택
+            let txt = document.getElementById("txt");
+            // alert(txt.value);
+        };
+        //더블클릭 이벤트
+        //아이디가 txt 태그의 내용 비우는 작업을 하는 함수를 작성
+        btn.ondblclick = () => {
+            let txt = document.getElementById("txt");
+            txt.value = "";
+        }
+    </script>
+</body>
+</html>

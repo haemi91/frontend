@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>mouse_position</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{margin: 0; padding:0}
+        #container{width: 1000px; height: 600px; margin: 50px; border: 1px solid #000;}
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+       window.onload = () => {
+           let container = document.getElementById("container");
+           container.onclick = (e) => {
+               //e.clientX == e.pageX
+               //웹 페이지 기준 좌표
+               console.log(e.clientX , " , " ,e.clientY);
+               //모니터 기준 좌표  
+               console.log(e.screenX, " , ", e.screenY);
+               //선택된 자기 자신 기준 좌표
+               console.log(e.offsetX, " , ", e.offsetY);
+           }
+       } 
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>if문 문제1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // 1 ~ 100까지의 숫자들 중 3의 배수와 8의 배수를 출력
+        // 3과8의 공배수들은 한번만 출력
+        for(i=1; i <= 100; i++){
+            // document.write(`${i} </br>`);
+            if(i % 3 == 0 || i % 8 == 0){
+                document.write(`${i} </br>`);
+            }
+        }
+
+        // 공배수를 두번 출력하려면
+        for(i=1; i <= 100; i++){
+            // document.write(`${i} </br>`);
+            if(i % 3 == 0){
+                document.write(`${i} </br>`);
+            }
+            if(i % 8 == 0){
+                document.write(`${i} </br>`);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

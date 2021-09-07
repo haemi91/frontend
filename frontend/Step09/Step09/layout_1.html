@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>레이아웃</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    header{
+      width: 1200px;
+      height: 150px;
+      border: 1px solid black;
+      margin: 0 auto;
+    }
+    nav{
+      width: 1200px;
+      height: 70px;
+      margin: 0 auto;
+      border: 1px solid steelblue;
+    }
+    section{
+      width: 900px;
+      height: 500px;
+      border: 1px solid red;
+      float: left;
+      box-sizing: border-box;
+    }
+    aside{
+      width: 300px;
+      height: 500px;
+      border: 1px solid violet;
+      float: left;
+      box-sizing: border-box;
+    }
+    .container{
+      width:1200px;
+      margin: 0 auto;
+      border: 1px solid yellowgreen;
+    }
+    footer{
+      width: 1200px;
+      height: 100px;
+      margin: 0 auto;
+      border: 1px solid teal;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <header>머리글 영역</header>
+  <nav>네비게이션 영역</nav>
+  <div class="container">
+    <section>
+      본문영역
+      <article>
+        본문 내용 영역
+      </article>
+    </section>
+    <aside>본문 외 내용</aside>
+  </div>
+  <footer>
+    꼬리말 영역
+  </footer>
+</body>
+</html>

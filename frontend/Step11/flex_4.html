@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>플렉스</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    .flex_container{
+      width: 1500px;
+      border:1px solid black;
+      padding:10px;
+    }
+    .box{
+      padding:5px 45px;
+      margin: 5px;
+      background-color: darkblue;
+      color:white;
+    }
+    .flex_row{
+      display: flex;
+      flex-direction: row;
+      height: 200px;
+      width: 100%;
+      border:1px solid green;
+    }
+    .align1{
+      /*교차 축 시작점*/
+      align-items: flex-start;
+    }
+    .align2{
+      /*교차 축 끝점*/
+      align-items: flex-end;
+    }
+    .align3{
+      /*교차 축 기준 중앙*/
+      align-items: center;
+    }
+    .align4{
+      /*문자 기준선에 맞추어서 배치*/
+      align-items: baseline;
+    }
+    .align5{
+      /*항목을 늘려서 교차축에 가득차게 배치*/
+      align-items: stretch;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex_container">
+    <div class="flex_row align1">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+    <div class="flex_row align2">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+    <div class="flex_row align3">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+    <div class="flex_row align4">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+    <div class="flex_row align5">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+  </div>
+</body>
+</html>

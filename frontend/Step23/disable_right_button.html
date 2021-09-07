@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>disable_right_button</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div{background-color: blueviolet; height: 400px;}
+    </style>
+    <!-- <script>
+        window.onload = function(){
+            alert("onload function");
+            let area = document.getElementById("area");
+            area.onmousedown = function(e){
+                alert(e.buttons);
+            }
+        }
+    </script> -->
+</head>
+<body>
+    <div id="area"></div>
+    <script>
+        let area = document.getElementById("area");
+        area.onmousedown = function(e){
+            alert(e.buttons);
+        }
+    </script>
+</body>
+</html>

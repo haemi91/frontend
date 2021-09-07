@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>반복문 중첩</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // 2 ~ 9까지 출력
+
+        for(dan=2; dan < 10; dan++){
+            document.write(`<h2>---${dan}단---</h2>`);
+            // 1 ~ 9까지 곱한 결과를 출력
+            for(i=1; i < 10; i++){
+                document.write(`${dan} * ${i} = ${dan * i}<br>`);
+            }
+        }
+
+        document.write(`<hr>`);
+
+        // while
+
+        var n = 2 , m = 1;
+        while(n < 10){
+            document.write(`<h2>---${n}단---</h2>`);
+            m=1; // 반목문 중첩시에 중첩된 반복문에 필요한 변수를 초기화
+            while(m < 10){
+                document.write(`${n} * ${m} = ${n * m}<br>`);
+                m++
+            }
+            n++;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

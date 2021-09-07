@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>interval_timeout</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            table{border-collapse: collapse;}
+            td{width: 300px; border: 1px solid #000; vertical-align: top;}
+        </style>
+        
+    </head>
+    <body>
+        <button id="inter">interval 정지</button>
+        <button id="time">timeout 정지</button>
+        <hr>
+        <table>
+            <tr>
+                <td id="inter_view"></td>
+                <td id="time_view"></td>
+            </tr>
+        </table>
+        <script>
+            window.onload = () => {
+                const inter_view = document.getElementById("inter_view");
+                const inter_id = setInterval(function(){
+                    const txt = new Date();
+                    inter_view.innerHTML = txt.toLocaleString();
+                },1000);
+
+                const btnInter = document.getElementById("inter");
+                btnInter.onclick = () => {
+                    clearInterval(inter_id);
+                }
+
+                const time_view = document.getElementById("time_view");
+                const time_id = setTimeout(function(){
+                    const txt = new Date();
+                    time_view.innerHTML = txt.toLocaleString();
+                },3000);
+
+                const btnTinme = document.getElementById("time");
+                btnTinme.onclick = () => {
+                    clearInterval(time_id);
+                }
+            }
+        </script>
+    </body>
+</html>

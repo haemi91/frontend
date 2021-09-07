@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="/resource/lib/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function(){
+        $("#txt").keyup(function(e){
+            console.log(e.keyCode);
+        });
+        //keydown 이벤트 처리는 div에 입력한 키값을 누적해서 보여줌
+        // 49   날짜 시간
+        // 65   날짜 시간
+        $("#txt").keydown(function(e){
+            var today = new Date();
+            $("div").prepend(e.keyCode+" " + today.toLocaleString()+"<br>");
+        });
+      });
+    </script>
+</head>
+<body>
+    <input type="text" id="txt">
+    <div></div>    
+</body>
+</html>

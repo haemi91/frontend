@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>아이디 선택자</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+       $(function(){
+            //val(값) --> value 속성에 값을 저장    
+            $("#id").val("아이디 입력하세요.");
+            $("button").click(function(){
+                //val() --> value 속성에 있는 값을 읽어옴
+                // alert($("#id").val());
+                const pass = $("#password").val();
+                $("#result").html("입력하신 암호는 " + pass + "<br>");
+                console.log($("#result").html());
+            });
+       });
+    </script>
+</head>
+<body>
+    <input type="text" id="id"> <input type="password" id="password">
+    <button>로그인</button>
+    <hr>
+    <div id="result"></div>
+</body>
+</html>

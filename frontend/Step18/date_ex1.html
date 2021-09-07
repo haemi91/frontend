@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>date_ex1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // new : 뒤에 나와 있는 형태를 메모리로 할당하겠다.
+        // 오늘 날짜 저장 중인 객체
+        let today = new Date();
+        
+        document.write(today, "<br>");
+        document.write("년도 : ", today.getFullYear(), "<br>");
+        document.write("월 : ", today.getMonth()+1, "<br>");
+        document.write("일 : ", today.getDate(), "<br>");
+        document.write("요일 : ", today.getDay(), "<br>");
+        document.write("시 : ", today.getHours(), "<br>");
+        document.write("분 : ", today.getMinutes(), "<br>");
+        document.write("초 : ", today.getMilliseconds(), "<br>");
+
+        // 2021년 8월 15일 날짜 지정
+        let iday = new Date(2021,7,15);
+        document.write(iday, "<br>");
+        document.write("년도 : ", iday.getFullYear(), "<br>");
+        // 월에 1을 더하는 이유 : 0부터 1월로 계산되어서
+        document.write("월 : ", iday.getMonth()+1, "<br>");
+        document.write("일 : ", iday.getDate(), "<br>");
+        document.write("요일 : ", iday.getDay(), "<br>");
+        iday.setDate(33); //날자 정보가 벗어나면 자동 계산
+        iday.setMonth(13);
+        document.write(iday.toLocaleString());
+        document.write("<hr>");
+        document.write(iday.getTime(), "<br>");
+        document.write(iday.getTime() - today.getTime(), "<br>");
+
+        let n = iday.getTime() - today.getTime();
+        //밀리초 단위로 나온 날짜 정보를 일수 기준으로 변경
+        document.write(n/ (1000*60*60*24), "<br>");
+
+        let d = new Date(1);
+        document.write(d , "<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

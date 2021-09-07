@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>테두리</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    div{
+      width: 300px; 
+      height: 300px;
+      margin: 0 auto;
+      text-align: center;
+      /* 
+        border-top-left-radius: 50px;
+        border-bottom-right-radius: 200px
+       */
+    }
+
+    .box1{
+      /* 두게 선종류 색상 */
+      border-left: 10px solid orange;
+      border-top: 5px dashed green;
+      border-right: 10px dotted firebrick;
+      border-bottom: 5px double steelblue;
+      margin-bottom: 20px;
+    }
+    .box2{
+      border: 20px outset blueviolet;
+      border-radius: 170px;
+    }
+    .box2:active{
+      border: 20px inset blueviolet;
+    }
+  </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

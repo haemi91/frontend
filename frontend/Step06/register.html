@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>회원가입</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <h1>회원가입 페이지</h1>
+  <form action="">
+  <table>
+    <tr>
+      <td>아이디</td>
+      <td><input type="text" placeholder="아이디 입력해주세요"></td>
+    </tr>
+    <tr>
+      <td>암호</td>
+      <td><input type="password" placeholder="암호 입력"></td>
+    </tr>
+    <tr>
+      <td>암호 확인</td>
+      <td><input type="password" placeholder="한번더 암호 입력"></td>
+    </tr>
+    <tr>
+      <td>이름</td>
+      <td><input type="text" placeholder="이름 입력하세요"></td>
+    </tr>
+    <tr>
+      <td>연락처</td>
+      <td>
+        <select>
+          <option value="1">010</option>
+          <option value="2">011</option>
+          <option value="3">016</option>
+          <option value="4">019</option>
+        </select>-<input type="text" size="4">-<input type="text" size="4">
+      </td>
+    </tr>
+    <tr>
+      <td>이메일</td>
+      <td>
+        <input type="text" placeholder="메일주소 입력">@<select>
+          <option value="-">주소를 선택하세요</option>
+          <option value="1">gmail.com</option>
+          <option value="2">naver.com</option>
+          <option value="3">hanmail.net</option>
+          <option value="4">직접입력</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>메일링 서비스 동의</td>
+      <td><input type="checkbox" id="chk"><label for="chk">가입</label></td>
+    </tr>
+    <tr>
+      <td>약관 동의</td>
+      <td>
+        <input type="radio" name="agree" id="a1"> <label for="a1">동의</label>
+        <input type="radio" name="agree" id="a2" checked> 
+        <label for="a2">비동의</label>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button>회원가입</button>
+        <button type="reset">초기화</button>
+        <button type="button">취소</button>
+      </td>
+    </tr>
+  </table>
+  </form>
+</body>
+</html>

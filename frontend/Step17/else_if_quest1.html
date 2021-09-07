@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>else if 문제1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+
+        /*
+            극장 입장료가 60세 이상 4000원, 20세 이상 6000원 , 학생(초중고) 3000원, 영유아/ 아동 1000원
+            나이를 입력 받아서 내야되는 입장료를 출력
+        */ 
+        let age = Number(prompt("나이를 입력해주세요",""));
+        let money = 0;
+
+        if( age >= 60 )
+            money = 4000;
+        else if( age >= 20 )
+            money = 6000;
+        else if( age >= 8 )
+            money = 3000;   
+        else
+            money = 1000;
+
+        document.write(`지불하실 입장료는 ${money} 입니다.`);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

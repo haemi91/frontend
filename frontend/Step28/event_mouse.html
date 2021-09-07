@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border : 1px solid black;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script src="/resource/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#box1").mouseover(function(){
+                $(this).css("background-color","red");
+            });
+            $("#box1").mouseout(function(){
+                $(this).css("background","none");
+            });
+            //box2에 마우스 올라갔을대 테두를 자유롭게 변경
+            // $("#box2").mouseenter(function(){
+            //     $(this).css("border","10px dotted red");
+            // });
+            // $("#box2").mouseleave(function(){
+            //     $(this).css("border","1px solid black");
+            // });
+            $("#box2").hover(function(){
+                $(this).css("border","10px dotted red");
+            },function(){
+                $(this).css("border","1px solid black");
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>회원가입</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    .true{
+      font-weight: bold;
+      color:blue;
+    }
+    .false{
+      font-weight: bold;
+      color:red;
+    }
+  </style>
+  <script>
+    /*
+      ※ onsubmit 이벤트를 제외하고 나머지 데이터를 체크하는 부분은
+         전부 함수를 만들어서 처리
+      1. 암호/한번더입력을 입력 할때마다 암호와 한번더 입력한 암호가 동일하면 
+         아이디가 pass_result인 태그에 암호가 일치합니다. 라고 출력
+         다르면 암호가 일치하지 않습니다. 라고 출력
+      
+      2. 이메일 호스트를 직접 입력을 선택하면 
+         아이디가 host_area인 태그에 아이디와 이름 속성이 whost인 
+         텍스트 상자를 추가
+      
+      3. 회원가입 버튼을 눌렀을때 해당 조건들을 만족할때만 서버로 전송
+         만족하지 않으면 submit 이벤트를 무효화 시킴
+         - 두번 입력한 암호가 일치했을때
+         - 암호와 아이디 6글자 이상일때
+         - 모든 데이터를 입력했을때
+         - 약관 동의를 했을때
+    */
+   function checkPassword(){
+    //필요한 태그 접근
+    var pass1 = document.getElementById("pass1");
+    var pass2 = document.getElementById("pass2");
+    var pass_result = document.getElementById("pass_result");
+    if(pass1.value.length < 6){
+      pass_result.innerHTML = "암호는 6글자 이상 입력하세요";
+      pass_result.className ="false";
+      return false;
+    }
+    if(pass1.value == pass2.value){
+      pass_result.innerHTML = "입력한 암호가 일치합니다.";
+      pass_result.className ="true"; //클래스 적용하는 방법
+      return true;
+    }else{
+      pass_result.innerHTML = "입력한 암호가 일치하지 않습니다.";
+      pass_result.className ="false";
+      return false;
+    }
+   }
+
+   //아이디 체크하는 함수
+   function checkId(){
+    var id = document.getElementById("id");
+    if(id.value.length < 6)
+      return false;
+    return true;
+  }
+  function checkEmpty(){
+    var arr = document.getElementsByTagName("input");
+
+    for(i=0;i<arr.length;i++){
+      if(arr[i].type == "checkbox" || arr[i].type == "radio")
+        continue;
+      if(arr[i].value.length == 0){
+        alert("모든 데이터를 입력하셔야 됩니다.");
+        arr[i].focus();
+        return false;
+      }
+    }
+
+    return true;
+  }
+  //취미 3개이상 체크 되었는지 체크
+  function checkHobby(){
+    //input 태그들중 체크박스를 전부 선택
+    var arr = document.getElementsByName("hobby");
+    //console.log(arr);
+    //반복문을 이용해서 체크가 되어있는지 카운트
+    var count = 0;//카운트할 변수
+    for(i=0;i<arr.length;i++){
+      if(arr[i].checked){
+        count++;
+      }
+    }
+    
+    return count >= 3;
+  }
+   function checkSubmit(e){
+    
+
+    if(!checkEmpty())
+      return false; 
+    //아이디 체크
+    if(!checkId()){
+      alert("아이디를 확인하세요");
+      return false;
+    }
+    //암호가 일치하는지 체크
+     if(!checkPassword())
+        return false;
+    
+    if(!checkHobby()){
+      alert("취미는 3개이상 체크하세요");
+      return false;
+    }
+    //약관 동의 체크
+    var agree = document.getElementById("a1");
+    if(!agree.checked){
+      alert("약관에 동의해야 가입하실수 있습니다.");
+      return false;
+    }
+
+   }
+
+   window.onload = () => {
+    var pass1 = document.getElementById("pass1");
+    var pass2 = document.getElementById("pass2");
+    //checkPassword 함수를 onkeyup 이벤트에 등록
+    pass1.onkeyup = pass2.onkeyup = checkPassword;
+
+    var host = document.getElementById("host");
+    host.onchange = () => {
+      var host_area = document.getElementById("host_area");
+      if(host.value == 4)
+        host_area.innerHTML = `<input type='text' name='whost' id='whost'>`;
+      else 
+        host_area.innerHTML = "";
+    }
+
+    var frm = document.getElementById("frm");
+    frm.onsubmit = checkSubmit;
+   }
+  </script>
+</head>
+<body>
+  <h1>회원가입 페이지</h1>
+  <form id="frm">
+  <table>
+    <tr>
+      <td>아이디</td>
+      <td><input type="text" id="id" name="id" placeholder="아이디 입력해주세요"></td>
+    </tr>
+    <tr>
+      <td>암호</td>
+      <td><input type="password" id="pass1" name="pass" placeholder="암호 입력"></td>
+    </tr>
+    <tr>
+      <td>암호 확인</td>
+      <td><input type="password" id="pass2" placeholder="한번더 암호 입력"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><span id="pass_result"></span></td>
+    </tr>
+    <tr>
+      <td>이름</td>
+      <td><input type="text" id="name" name="name" placeholder="이름 입력하세요"></td>
+    </tr>
+    <tr>
+      <td>연락처</td>
+      <td>
+        <select name="tel1">
+          <option value="1">010</option>
+          <option value="2">011</option>
+          <option value="3">016</option>
+          <option value="4">019</option>
+        </select>-<input type="text" name="tel2" id="tel2" size="4">-<input type="text"  name="tel3" id="tel3" size="4">
+      </td>
+    </tr>
+    <tr>
+      <td>이메일</td>
+      <td>
+        <input type="text" name="mail" id="mail" placeholder="메일주소 입력">@<select id="host" name="host">
+          <option value="-">주소를 선택하세요</option>
+          <option value="1">gmail.com</option>
+          <option value="2">naver.com</option>
+          <option value="3">hanmail.net</option>
+          <option value="4">직접입력</option>
+        </select>
+        <span id="host_area"></span>
+      </td>
+    </tr>
+    <tr>
+      <td>취미 선택(3개이상 선택)</td>
+      <td>
+        <input type="checkbox" id="chk1" name="hobby" value="1">
+        <label for="chk1">게임</label>
+        <input type="checkbox" id="chk2" name="hobby" value="2">
+        <label for="chk2">낚시</label>
+        <input type="checkbox" id="chk3" name="hobby" value="3">
+        <label for="chk3">등산</label>
+        <input type="checkbox" id="chk4" name="hobby" value="4">
+        <label for="chk4">독서</label>
+        <input type="checkbox" id="chk5" name="hobby" value="5">
+        <label for="chk5">음악감상</label>
+        <input type="checkbox" id="chk6" name="hobby" value="6">
+        <label for="chk6">영화감상</label>
+      </td>
+    </tr>
+    <tr>
+      <td>메일링 서비스 동의</td>
+      <td><input type="checkbox" id="chk" name="chk" value="1"><label for="chk">가입</label></td>
+    </tr>
+    <tr>
+      <td>약관 동의</td>
+      <td>
+        <input type="radio" name="agree" id="a1" value="1"> <label for="a1">동의</label>
+        <input type="radio" name="agree" id="a2" value="2" checked> 
+        <label for="a2">비동의</label>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button>회원가입</button>
+        <button type="reset">초기화</button>
+        <button type="button">취소</button>
+      </td>
+    </tr>
+  </table>
+  </form>
+</body>
+</html>

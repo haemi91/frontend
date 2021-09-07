@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: blueviolet;
+      animation-name: ani3;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      position: absolute;
+    }
+    @keyframes ani1{
+      from{
+        background-color: blueviolet;
+        border-radius: 0px;
+      }
+      to{
+        background-color: brown;
+        border-radius: 100px;
+      }
+    }
+    /*
+      박스가 오른쪽 끝까지 이동하는 애니메이션 작업
+    */
+    @keyframes ani2{
+      from{
+        left:0px;
+      }
+      to{
+        left: calc(100% - 200px);
+      } 
+    }
+    @keyframes ani3{
+      0%{
+        left:0px;
+      }
+      50%{
+        border-radius: 100px;
+      }
+      100%{
+        left: calc(100% - 200px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>  
+</body>
+</html>

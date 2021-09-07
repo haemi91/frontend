@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <!--
+    유튜브, 네이버, 카카오, 트위치, 아프리카TV 동영상 현재 페이지에 출력
+  -->
+  유튜브<br>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/hLF9fezVZhQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <hr>
+  네이버<br>
+  <iframe src='https://tv.naver.com/embed/20617864?autoPlay=true' frameborder='no' scrolling='no' marginwidth='0' marginheight='0' WIDTH='544' HEIGHT='306' allow='autoplay' allowfullscreen></iframe>
+  <hr>
+  카카오<br>
+  <iframe title="남자에게 실연당한 디바제시카 ??" width="640" height="360" src="https://play-tv.kakao.com/embed/player/cliplink/304460686?service=player_share" allowfullscreen frameborder="0" scrolling="no" allow="autoplay; fullscreen; encrypted-media"></iframe>
+  <hr>
+  트위치<br>
+  <!-- Add a placeholder for the Twitch embed -->
+<div id="twitch-embed"></div>
+
+<!-- Load the Twitch embed script -->
+<script src="https://player.twitch.tv/js/embed/v1.js"></script>
+
+<!-- Create a Twitch.Player object. This will render within the placeholder div -->
+<script type="text/javascript">
+  new Twitch.Player("twitch-embed", {
+    channel: "lck_korea"
+  });
+</script>
+<iframe
+  id="chat_embed"
+  src="https://www.twitch.tv/embed/lck_korea/chat?parent=www.example.com"
+  height="500"
+  width="350">
+</iframe>
+</body>
+</html>
+
+
+
+
+

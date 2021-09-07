@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>함수3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // ()안에 변수가 없으면, 해당 실행시 값을 보낼필요가 없다
+        function inputNumber(){
+            let num = Number(prompt("숫자 하나 입력하세요","0"));
+            return num;
+        }
+        // let n1 = inputNumber();
+        // document.write(n1,"<br>");
+        //------------------------------------------------------------
+        // 익명 함수 : 이름이 없는 함수, 반드시 변수에 저장, 변수명 실행
+        //            이벤트 처리, 객체에 함수 등록 할 때
+        //------------------------------------------------------------
+        let sum = function(a,b){
+            return a+b;
+        }
+        document.write(sum(10,20),"<br>");
+        // let input = inputNumber;
+        // document.write(input());
+        // 괄호 함수 : 함수 키워드와 함수 이름이 없이 선언하는 함수
+        let circleArea = (r) => {
+            return r * r * Math.PI;
+        }
+        document.write(circleArea(3),"<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

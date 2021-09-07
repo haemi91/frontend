@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      background-color: gray;
+      border:1px solid black;
+      float: left;
+      margin-left: 20px;
+      font-size: 24px;
+      text-align: center;
+    }
+    div#t1{
+      transform: rotateX(45deg);
+    }
+    div#t2{
+      transform: rotateX(90deg);
+    }
+    div#t3{
+      transform: rotateX(135deg);
+    }
+    div#t4{
+      transform: rotateX(180deg);
+    }
+    div#t5{
+      animation: rotateX 2s linear infinite alternate ;
+    }
+    div#t6{
+      animation: rotateY 2s linear infinite alternate ;
+    }
+    div#t7{
+      animation: rotateZ 2s linear infinite;
+    }
+    div#t8{
+      animation: rotate 2s linear infinite;
+    }
+    @keyframes rotateX {
+      from{
+        transform: rotateX(0deg);
+      }
+      to{
+        transform: rotateX(360deg);
+      }
+    }
+    @keyframes rotateY {
+      from{
+        transform: rotateY(0deg);
+      }
+      to{
+        transform: rotateY(360deg);
+      }
+    }
+    @keyframes rotateZ {
+      from{
+        transform: rotateZ(0deg);
+      }
+      to{
+        transform: rotateZ(360deg);
+      }
+    }
+    @keyframes rotate {
+      from{
+        transform: rotate3d(0)
+      }
+      to{
+        transform: rotate3d(1,1,1,360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="t1">45도</div>
+    <div id="t2">90도</div>
+    <div id="t3">135도</div>
+    <div id="t4">180도</div>
+    <div id="t5">애니메이션</div>
+    <div id="t6">애니메이션</div>
+    <div id="t7">애니메이션</div>
+    <div id="t8">애니메이션</div>
+</body>
+</html>

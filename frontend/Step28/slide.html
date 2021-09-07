@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="/resource/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+
+
+            $("button").click(function () {
+                switch ($(this).attr("id")) {
+                    case "up":
+                        $("#img").slideUp(1000);
+                        break;
+                    case "down":
+                        $("#img").slideDown(1000);
+                        break;
+                    case "toggle":
+                        $("#img").slideToggle(1000);
+                        break;
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="up">slideUp</button>
+    <button id="down">slideDown</button>
+    <button id="toggle">slideToggle</button>
+    <hr>
+    <img src="/images/old_town.jpg" id="img">
+</body>
+
+</html>

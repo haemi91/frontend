@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        p{
+            background-color: cornflowerblue;
+            font-size: 20px;
+            color: white;
+        }
+        .back{
+            background-color: black;
+        }
+    </style>
+    <script src="/resource/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            //css 함수에 css 속성만 넣으면 해당 속성 값을 읽어옴
+            console.log($("p").css("background-color"));
+            //css(속성, 값) --> 해당 css 속성에 새 값을 지정
+            $("p").css("background-color","red");
+            //div 태그에 배경색을 skyblue로 지정하고 글자 크기를 20px 지정
+           
+            // var css_data = {
+            //     "background-color" : "skyblue",
+            //     "font-size" : "30px"
+            // };
+           
+            var css_data = new Object();
+            css_data['background-color'] = "skyblue";
+            css_data['font-size'] = "30px";
+
+            $("div").css(css_data);
+            // $("div").css({
+            //     "background-color" : "skyblue",
+            //     "font-size" : "30px"
+            // });
+        });
+    </script>
+</head>
+<body>
+    <p class="back">내용</p>
+    <div class="back">내용</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>함수2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        /*
+        데이터를 함수에 보내면 계산해서 결과값을 되돌려 주는 함수
+        */
+        /*
+            함수에서 숫자 두개를 입력 받아서 뺀 결과를 되돌려주는 함수
+        */
+            function sub(a,b){
+            //결과 값을 되돌려 주는 키워드 : return
+            //사용법 return 값;
+            var result = a-b;
+            return result;
+            }
+            var n1 = 10, n2 = 15;
+            var r = sub(n1,n2);
+            document.write(r,"<br>");
+            /*
+            함수에서 원의 반지름을 받아서
+            결과로 원넓이를 되돌려 주는 함수를 작성
+            실행하고 결과를 출력
+            */
+        function circleArea(r){
+            return r * r * Math.PI;
+        }
+        document.write(circleArea(5),"<br>");
+        /*
+            함수가 숫자 하나를 받아서
+            해당 숫자의 약수 목록(배열)을 만들어서 되돌려 주는 함수를 작성
+            해당 함수 실행을 하고 결과를 받아서 출력하는 코드까지 추가
+        */
+        function getDivisorList(num){
+            var arr = new Array();
+
+            for(i=1;i<=num;i++){
+            if(num % i == 0)
+                arr.push(i);
+            }
+            return arr;
+        }
+        document.write(getDivisorList(36),"<br>");
+        /*
+            1~100까지의 숫자들 중 소수만 출력 하시오
+            Step01 - 1부터 100까지 출력
+            Step02 - 1~100까지의 숫자가 각각 소수인지 아닌지 판단하는 코드 작성
+        */
+        function checkPrimeNumber(n){
+        if(n < 2) 
+            return false;
+            for(j = 2;j < n; j++){
+            if(n % j == 0)
+                return false;
+            }
+            return true;//소수가 아니면 반복문에 있던 리턴문이 실행
+        }
+        for(i=1;i<=100;i++){
+            if(checkPrimeNumber(i))
+            document.write(i,"<br>");
+        }
+        
+        /* for(i=1;i<=100;i++){
+        for(j=2;j<i;j++){
+            if(i%j == 0)
+            break;
+        }
+        if(i==j)
+            document.write(i,"<br>");
+        } */
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

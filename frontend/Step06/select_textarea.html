@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>select, textarea</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <select name="tel">
+    <option value="-">선택</option>
+    <option value="1">010</option>
+    <option value="2" selected>011</option>
+    <option value="3">016</option>
+    <option value="4">019</option>
+  </select> <br>
+  <select name="major">
+    <optgroup label="컴퓨터공학과">
+      <option value="1">임베드디 학과</option>
+      <option value="2">게임 학과</option>
+      <option value="3">빅데이터 학과</option>
+      <option value="4">AI 학과</option>
+    </optgroup>
+    <optgroup label="융합학과">
+      <option value="5">전자바이오물리학과</option>
+      <option value="6">동북아문화산업학부</option>
+      <option value="7">전자경영학부</option>
+    </optgroup>
+  </select>
+  <hr>
+  <!--동시에 두개이상  선택해야 될때 -->
+  <select name="major" multiple size="10">
+    <optgroup label="컴퓨터공학과">
+      <option value="1">임베드디 학과</option>
+      <option value="2">게임 학과</option>
+      <option value="3">빅데이터 학과</option>
+      <option value="4">AI 학과</option>
+    </optgroup>
+    <optgroup label="융합학과">
+      <option value="5">전자바이오물리학과</option>
+      <option value="6">동북아문화산업학부</option>
+      <option value="7">전자경영학부</option>
+    </optgroup>
+  </select>
+  <hr>
+  <textarea name="" id="" cols="30" rows="10"></textarea>
+</body>
+</html>

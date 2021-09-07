@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>break 키워드</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        let total = 0;
+        let i = 1;
+
+        // 반복문에서 vreak의 역할은 break를 직접 감싸고 있는 반복문을 종료하는 효과
+        while(true){
+            total += i;
+            i++;
+            if(total > 5000)
+              break;
+        }
+
+        document.write(total);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>device_homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        //toLowerCase --> 알파벳을 전부 소문자로 변환하는 함수
+        //toUpperCase --> 알파벳을 전부 대문자로 변환하는 함수
+        let info = navigator.userAgent.toLowerCase();
+
+        if(info.indexOf('windows') != -1){
+            location.href = 'https://www.microsoft.com/ko-kr';
+        }else if(info.indexOf('macintosh') != -1){
+            location.href = 'https://www.apple.com/mac/'
+        }else if(info.indexOf('iphone') != -1){
+            location.href = 'https://www.apple.com/kr/iphone/.html'
+        }else{
+            location.href="https://www.google.co.kr"
+        }
+        /* else if(info.indexOf('android') != -1){
+            alert("구글 홈페이지로 이동합니다.");
+            location.href = 'https://www.google.co.kr';
+        }*/
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

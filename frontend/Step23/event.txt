@@ -1,0 +1,22 @@
+브라우저(읽어드린다음에)
+    onload
+키보드
+    onkeydown : 키보드 키를 누른 순간
+    onkeyPress : 키보드 키를 누르고 있는 순간
+    onkeyup : 키보드를 키를 뗀 순간
+마우스
+    onclick : 클릭 한 순간
+    ondbclick : 더블 클릭 한 순간
+    onmousedown : 마우스에 있는 버튼을 누른 순간
+    onmouseup : 마우스에 있는 버튼을 눌렀다가 뗀 순간
+    onmousemove : 마우스를 움직였을때
+    onmouseover : 마우스가 요소 위로 올라 갔을 때
+    onmouseout : 마우스가 요소 밖으로 나갔을 때
+    onmouseenter : 마우스가 요소 위로 올라 갔을 때
+    onmouseleave : 마우스가 요소 밖으로 나갔을 때
+    onscroll : 스크롤바가 움직였을 때
+폼 / html 요소
+    onsubmit : 폼에 입력한 내용을 서버로 전달하기전에 생기는 이벤트
+    onchange : 폼 태그에 입력한 내용이 바뀌었을 때
+    onfocus : 태그를 선택했을 때
+    onblur : 선택된 태그가 해제 되었을 때 (다른 태그를 선택했을때)

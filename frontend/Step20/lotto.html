@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>lotto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+          border-collapse: collapse;
+        }
+    
+        td {
+          padding: 15px;
+          font-size: 24px;
+          border: 1px solid black;
+        }
+      </style>
+      <script>
+        /*
+          로또 번호 범위는 1~45까지 입니다.
+          로또번호 6개를 자동 구매하는 처리를 하겠습니다.
+          로또번호 자동으로 뽑을때는 중복된 숫자 X
+          로또번호를 6개 뽑으면 화면에 출력
+        */
+        var tag = "<table>";
+        var lotto = new Array();
+        for(j=0;j<5;j++){
+          //배열을 매번 초기화
+          lotto.splice(0,lotto.length); //전체 삭제, 새로 생성
+        //로또 번호 한줄 뽑음
+        while (lotto.length < 6) {
+          var n = Math.floor(Math.random() * 45) + 1;
+          if (lotto.indexOf(n) != -1)
+            continue;
+          lotto.push(n);
+        }
+        //document.write(`자동으로 뽑은 로또번호[${lotto}]<br>`);
+        //로또번호 한줄 테이블 태그에 추가
+        tag += `<tr><td>${String.fromCharCode(65+j)} 자 동</td>`;
+        for(i=0;i<lotto.length;i++){
+          tag += `<td>${lotto[i]}</td>`;
+        }
+        tag += "</tr>";
+        }
+        tag += "</table>";
+    
+        document.write(tag);
+      </script>
+</head>
+<body>
+    
+</body>
+</html>

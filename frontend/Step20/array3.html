@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>배열</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        /*배열 하나 생성, 숫자는 랜덤하게 10개 저장*/
+        let arr = new Array();
+    
+        //for(i=0;i<10;i++){
+        while(arr.length < 10){
+          //랜덤한 숫자 범위 1~10
+          arr.push(Math.floor(Math.random()*10)+1);
+        }
+        document.write(arr,"<br>");
+        //검색
+        document.write("숫자 5 검색 결과 : ",arr.indexOf(5),"<br>");
+        document.write("숫자 1 검색 결과 : ",arr.indexOf(1),"<br>");
+        document.write("숫자 3 검색 결과 : ",arr.indexOf(3),"<br>");
+        document.write("숫자 10 검색 결과 : ",arr.indexOf(10),"<br>");
+        document.write("숫자 5 검색 결과 : ",arr.lastIndexOf(5),"<br>");
+        document.write("숫자 1 검색 결과 : ",arr.lastIndexOf(1),"<br>");
+        document.write("숫자 3 검색 결과 : ",arr.lastIndexOf(3),"<br>");
+        document.write("숫자 10 검색 결과 : ",arr.lastIndexOf(10),"<br>");
+        //삭제
+        /*
+        arr.pop();
+        document.write(arr,"<br>");
+        */
+        //document.write(arr.splice(3,4),"<br>");
+        let result = arr.splice(3,4);
+        document.write(result,"<br>");
+        document.write(arr,"<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

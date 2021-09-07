@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>continue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        for(i=1;i<100;i++){
+            if(i%2==0)
+              continue; //남아있는 코드를 무시하고 다음 반복으로 넘어감
+            document.write(i,"</br>");
+        }
+
+        document.write("<hr>")
+
+        let n = 1;
+        while(n<=100){
+            if(n%2==0){
+                n++;
+                continue;
+            }
+            document.write(n,"</br>");
+            n++;
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

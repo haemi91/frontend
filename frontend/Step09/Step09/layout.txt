@@ -1,0 +1,15 @@
+레이아웃
+  가로 세로 길이 셋팅
+  box-sizing
+
+  margin padding
+
+  block, inline 태그들을 적절하게 배치
+    display 태그 성질 변경
+  
+  float 배치 - clear
+
+  시맨틱 태그
+    header  nav  section article aside footer
+
+  플렉스 레이아웃 배치

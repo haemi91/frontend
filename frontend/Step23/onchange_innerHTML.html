@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>onchange_innerHTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <form method="get" name="frm" id="frm">
+        <input type="text">@
+        <select name="" id="host">
+            <option value="gmail.com">gmail.com</option>
+            <option value="naver.com">naver.com</option>
+            <option value="hanmail.net">hanmail.net</option>
+            <option value="nate.com">nate.com</option>
+            <option value="5">직접 입력</option>
+        </select>   <span id="area"></span>
+        <button id="send">전송</button>
+    </form>
+    <script>
+        window.onload = () => {
+            let host = document.getElementById("host");
+            host.onchange = () => {
+                // alert(host.value);
+                let area = document.getElementById("area");
+                if(host.value == 5){
+                    //동적엘리먼트 추가 - 추가되는 태그가 이벤트가 필요한 경우에는
+                    //                    추가 후에 바로 이벤트 처리를 해야됨
+                    area.innerHTML = `<input type="text" name="whost" id="whost">`;
+                    
+                }else{
+                    area.innerHTML = "";
+                }
+            }//host onchange
+            // 폼에 있는 서브밋 버튼을 클릭하면
+            // 선택된 host/whost 주소값을 콘솔 or 경고창으로 띄움
+
+            let frm = document.getElementById("frm");
+            frm.onsubmit = (e) => {
+                let host = document.getElementById("host");
+                let whost = document.getElementById("whost");
+                if(host.value==5){
+                    alert(host.value, "-", whost.value);
+                }else{
+                    alert(host.value);
+                }
+            }//frm onsubmit
+            //에러가 발생하는 부분 - onload 당시에는 해당 태그 없음 그래서 접근 x
+            //에러가 발생하는 부분
+            let whost = document.getElementById("whost");
+            consloe.log(whost);
+            // whost.onkeyup = () => {
+            //     console.log(whost.value);
+            // }
+        }//window onload
+    </script>
+</body>
+</html>

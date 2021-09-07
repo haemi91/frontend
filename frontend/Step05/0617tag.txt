@@ -1,0 +1,26 @@
+테이블 태그에 머리글 - thead
+             본문 - tbody
+             꼬리말 - tfoot
+
+iframe - 다른 웹사이트 페이지를 보여주는 공간
+  src - 웹 주소, 이미지 주소, 동영상 주소, 음악 주소, 텍스트 파일 주소
+
+form - 폼 태그, 사용자로부터 입력 받는 태그들
+  사용사로부터 입력 받는 태그
+      input, select, textarea, button
+  
+  form 속성
+    action : 사용자가 입력한 내용을 보낼 웹서버 페이지 <-- 백엔드 개발팀에서 경로 알려줌
+    method : post - 내용을 패킷 body에 포함해서 보냄 외부 노출 안됨, 용량 제한 X
+             get - url에 포함해서 보냄 외부에 노출 됨, 용량이 제한 O
+
+  text - readonly, required, autofocuse, placeholder, maxlength, minlength
+
+  button 3가지 타입
+    button : 아무런 기능이 없는 버튼, 디자인만 적용된 상태
+             js 이용해서 기능을 만들어서 연결
+    submit : 사용자가 입력한 내용을 서버로 전송하는 버튼
+    reset : 폼 태그 내부 태그들을 초기 상태로 만듬
+
+
+

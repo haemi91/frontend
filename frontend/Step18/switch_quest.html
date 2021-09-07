@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>switch 문제1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+
+        /*
+            극장 입장료가 60세 이상 4000원, 20세 이상 6000원 , 학생(초중고) 3000원, 영유아/ 아동 1000원
+            나이를 입력 받아서 내야되는 입장료를 출력
+        */ 
+        let age = Number(prompt("나이를 입력해주세요",""));
+        let money = 0;
+
+        // 소수점 내림 처리
+        document.write(Math.floor(age/4),"<br>");
+
+        switch(Math.floor(age/4)){
+            case 0:
+            case 1:
+                money = 1000;
+                break;
+            case 2:
+            case 3:
+            case 4:
+                money = 3000;
+                break;
+            case 5: case 6: case 7: case 8:
+            case 9: case 10: case 11: case 12:
+            case 13: case 14:
+                money = 6000;
+                break;
+            default:
+                money = 4000;
+        }
+
+        document.write(`지불하실 입장료는 ${money} 입니다.`);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

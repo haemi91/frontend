@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src="/resource/lib/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function(){
+        $("button").click(function(){
+          //jquery ajax 수행 -> url, data, type, sucess, error, dataType
+          $.ajax({
+            url : 'http://nam2626.dothome.co.kr/ajax_xml.php',
+            type : 'get',
+            dataType : "xml",//서버에서 되돌려주는 데이터 형식
+            success : function(data){
+              console.log(data);
+              //통신 성공적으로 수행되어서 데이터를 수신했을때 처리하는 부분
+              var question = $(data).find("question").text();
+              var answer = $(data).find("answer").text();
+              $(".view").html(`문제 : ${question}<br> 답 : ${answer}<br>`);
+            }
+
+          });
+        });
+    });
+  </script>
+</head>
+<body>
+    <button>xml 데이터 호출</button>
+    <div class="view"></div>
+</body>
+</html>

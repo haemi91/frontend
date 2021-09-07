@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>태그 속성제어</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="/resource/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            console.log($("a").attr("href"));
+            $("a").attr("href","https://www.google.co.kr");
+            // 하이퍼링크에 새탭에 띄우는 속성을 설정
+            // $("a").attr("target", "_blank");
+            $("a").attr({
+                "href":"https://www.google.co.kr",
+                "target": "_blank"
+            });
+            // input 태그 required 속성을 추가
+            $("input").attr("required","");
+            //input 태그 required 속성을 제거
+            $("input").removeAttr("required","");
+        });
+    </script>
+</head>
+<body>
+    <a href="#">구글로 이동</a><br>
+    <form action="">
+        <input type="text" name="txt"><button>전송</button>
+    </form>    
+</body>
+</html>

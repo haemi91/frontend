@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>배열</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        let n1 = 10, n2 = 20, n3 = 30, n4 = 40, n5 = 50;
+        let sum = 0;
+
+        // 변수명이 달라서 반복문으로 묶을수가 없음
+        sum += n1;
+        sum += n2;
+        sum += n3;
+        sum += n4;
+        sum += n5;
+
+        //배열(Array) : 하나의 변수명으로 여러개의 값을 저장하는 방법
+        let arr = [10,20,30,40,50];
+        // 각 배열의 요소를 인덱스(index) : 0 ~ 배열개수 -1
+        document.write(arr[0],"<br>");
+        document.write(arr[1],"<br>");
+        document.write(arr[2],"<br>");
+        document.write(arr[3],"<br>");
+        document.write(arr[4],"<br>");
+
+        sum = 0;
+        //배열 arr에 저장된 모든 내용을 sum에다가 더해서 저장한 뒤 출력
+        console.log(`현재 배열 개수 : ${arr.length}`)
+        for(i=0;i<arr.length;i++){
+            sum+= arr[i];
+        }
+        document.write(`sum : ${sum} <hr>`);
+
+        sum = 0;
+        for(i in arr){
+            sum += arr[i];
+        }
+        document.write(`sum : ${sum}`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

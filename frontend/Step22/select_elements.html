@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>html 요소 접근</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <p>p4</p>
+    <input type="text" value="t1"><br>
+    <input type="password" value="t2"><br>
+    <input type="text" value="t3"><br>
+    <input type="password" value="t4"><br>
+    <input type="checkbox" id="chk1" value="c1" checked>체크1<br>
+    <input type="checkbox" id="chk2" value="c2">체크2<br>
+    <form name="frm">
+        <input type="text" name="id" value="a010101"><br>
+        <input type="text" name="name" value="홍길동"><br>
+    </form>
+    <script>
+        //첫번째 접근 방법 - 태그명으로 접근
+        let p = document.getElementsByTagName("p");
+        console.log(`선택된 p태그 개수 : ${p.length}`);
+        for(i=0;i<p.length;i++){
+            console.log(p[i].innerHTML);
+            p[i].innerHTML = `<b>${p[i].innerHTML}</b>`;
+            //p[i].innerText = `<b>${p[i].innerHTML}</b>`;
+        }
+        //console 창에 input에 입력되어 있는 값들 전부 출력
+        //input[i].value <-- 선택 input 태그에 입력되어 있는 값을 읽어옴
+        let input = document.getElementsByTagName("input");
+        console.log(`선택된 input태그 개수 : ${input.length}`);
+        for(i=0;i<input.length;i++){
+            console.log(`${input[i].value},${input[i].type}`);
+            // input[i].value = "값을 바꿈";
+        }
+
+        // 아이디로 선택
+        let chk1 = document.getElementById("chk1");
+        console.log(`${chk1.type},${chk1.id},${chk1.value},${chk1.checked}`);
+        let chk2 = document.getElementById("chk2");
+        console.log(`${chk2.type},${chk2.id},${chk2.value},${chk2.checked}`);
+
+        //name 속성으로 선택
+        let id = document.frm.id;
+        console.log(id.value);
+        //name 속성이 name인 태그도 선택해서 value를 console에 출력
+        let name = document.frm.name;
+        console.log(name.value);
+        
+    </script>
+</body>
+</html>

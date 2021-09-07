@@ -1,0 +1,7 @@
+  input type : file, date, color, number, range
+  
+  select 
+
+  textarea
+  
+  progress 진행바

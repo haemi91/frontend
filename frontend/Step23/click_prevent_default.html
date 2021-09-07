@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>click_prevent_default</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <a href="https://www.naver.com/" id="link">네이버로 이동</a>
+    <form name="frm">
+        <input type="checkbox" name="chk" id="chk"> 개인정보 활용 동의합니다.<br>
+        <button id="btn">가입하기</button>
+    </form>
+    <script>    
+
+        /*
+           네이버로 이동을 클릭 했을때 이동하는 주소가 경고창에 출력 되게끔
+           자바스크립트 이벤트 처리 
+        */ 
+
+        window.onload = () => {
+            let link = document.getElementById("link");
+            /*
+                이벤처리시 매개변수 e 선언하면
+                해당 이벤트에 대한 정보와 필요 데이터를 받음
+            */ 
+           link.onclick = (e) => {
+                alert(link.href);
+                // return false; //기본적으로 셋팅된 행동을 무력화
+                e.preventDefault(); //기본적으로 셋팅된 행동을 무력화
+           }
+           document.frm.onsubmit = (e) => {
+                //가입하기 클릭하면 chk가 체크가 되었는지 안되었는지 판단하는 코드를 작성
+                let chk = document.getElementById("chk");
+                if(!chk.checked){
+                    alert("개인정보 활용에 동의해야 가입할 수 있습니다");
+                    e.preventDefault();
+                }else{
+                    alert("회원 가입이 되었습니다.");
+                }
+                
+
+           }
+        }
+
+    </script>
+</body>
+</html>

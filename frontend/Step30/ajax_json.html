@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src="/resource/lib/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function(){
+        $("#time").html(new Date().toLocaleString());
+        $("#btn").click(function(){
+            var args = "txt=" + $("#txt").val();
+            $.ajax({
+              url:"http://nam2626.dothome.co.kr/papago.php",
+              data:args,
+              type:'get',
+              dataType:'json',//데이터 받는 형식
+              success : function(result){
+                console.log(result.message.result.translatedText);
+                $("#view").append(result.message.result.translatedText+"<hr>");
+              }
+            });
+        });
+    });
+  </script>
+</head>
+<body>
+    <div id="time"></div>
+    <textarea id="txt"></textarea>
+    <button id="btn">번역</button>
+    <div id="view"></div>
+</body>
+</html>

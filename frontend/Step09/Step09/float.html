@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>float</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      font-size: 24px;
+      border:1px solid black;
+      margin-top: 10px;
+      text-align: center;
+      padding-top: 80px;
+      box-sizing: border-box;
+    }
+  
+    .left{
+      float: left;
+    }
+    .container{
+      border: 1px solid red;
+      text-align: center;
+    }
+    .clear{
+      clear: both;
+    }
+    .right{
+      float: right;
+    }
+    .subcontainer{
+      border:1px solid greenyellow;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="subcontainer">
+      <div class="box left">1</div>
+      <div class="box left">2</div>
+      <div class="box left">3</div>
+      <div class="box left">4</div>
+    </div>
+  </div>
+    <div class="box clear">5</div>
+  <div class="container">
+    <div class="box right">1</div>
+    <div class="box right">2</div>
+    <div class="box right">3</div>
+    <div class="box right">4</div>
+  </div>  
+  <div class="box clear">5</div>
+
+</body>
+</html>

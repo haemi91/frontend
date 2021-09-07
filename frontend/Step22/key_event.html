@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>키 이벤트</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <input type="text" id="txt">
+    <div id="area"></div>
+    <script>
+        let txt = document.getElementById("txt");
+        let area = document.getElementById("area");
+
+        //키를 눌렀을 때, 누르고 있을 때, 눌렀다가 떼었을 때
+        //e 이벤트 객체, 발생한 이벤트에 관련된 데이터 및 기능
+        txt.onkeydown = function(e){
+            console.log("현재 누른 키보드 : " +e.keyCode ,"<br>");
+        }
+        txt.onkeypress = function(e){
+            console.log("현재 누르고 키보드 : " +e.keyCode ,"<br>");
+        }
+        txt.onkeyup = function(e){
+            area.innerHTML = "눌렀다가 뗀 키 : " +e.keyCode;
+        }
+    </script>
+</body>
+</html>
